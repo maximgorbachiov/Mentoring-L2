@@ -7,6 +7,7 @@ using ThreadTasks.Task1;
 using ThreadTasks.Task2;
 using ThreadTasks.Task3;
 using ThreadTasks.Task4;
+using ThreadTasks.Task5;
 
 namespace UserConsole
 {
@@ -36,11 +37,19 @@ namespace UserConsole
             Console.ReadKey();
             #endregion
 
-            Console.WriteLine();*/
+            Console.WriteLine();
 
             #region Fourth Task
             Console.WriteLine("Fourth Task");
             Task4.RunThreadsWithState(10);
+            Console.ReadKey();
+            #endregion
+
+            Console.WriteLine();*/
+
+            #region Fifth Task
+            Console.WriteLine("Fifth Task");
+            Task5.RunThreadsWithState(10);
             Console.ReadKey();
             #endregion
 
