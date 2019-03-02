@@ -9,22 +9,19 @@ namespace ThreadTasks.Task4
         {
             int value = (int)state;
 
+            Console.WriteLine($"Thread ID: {Thread.CurrentThread.ManagedThreadId} and state value: {value}");
+            value--;
+            state = value;
+
             if (value != 0)
             {
-                value--;
-                Console.WriteLine($"Thread ID: {Thread.CurrentThread.ManagedThreadId} and state value: {value}");
-                state = value;
-
                 ParameterizedThreadStart threadFunction = new ParameterizedThreadStart(RunThreadsWithState);
                 Thread thread = new Thread(threadFunction);
                 thread.Start(state);
 
                 thread.Join();
             }
-            else
-            {
-                Console.WriteLine("Last thread");
-            }
+            Console.WriteLine($"Thread ID: {Thread.CurrentThread.ManagedThreadId} released");
         }
     }
 }
