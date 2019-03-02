@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace ThreadTasks
+namespace ThreadTasks.Task1
 {
     public static class Task1
     {
