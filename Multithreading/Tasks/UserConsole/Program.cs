@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ThreadTasks.Task1;
 using ThreadTasks.Task2;
 using ThreadTasks.Task3;
+using ThreadTasks.Task4;
 
 namespace UserConsole
 {
@@ -27,11 +28,19 @@ namespace UserConsole
             Console.ReadKey();
             #endregion
 
-            Console.WriteLine();*/
+            Console.WriteLine();
 
             #region Third Task
             Console.WriteLine("Third Task");
             Task3.RunMatrixMultiplication();
+            Console.ReadKey();
+            #endregion
+
+            Console.WriteLine();*/
+
+            #region Fourth Task
+            Console.WriteLine("Fourth Task");
+            Task4.RunThreadsWithState(10);
             Console.ReadKey();
             #endregion
 
