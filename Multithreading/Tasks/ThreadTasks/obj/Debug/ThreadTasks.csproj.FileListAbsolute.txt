@@ -1,0 +1,6 @@
+D:\Study\Mentoring L2\Multithreading\Tasks\ThreadTasks\obj\Debug\ThreadTasks.csprojAssemblyReference.cache
+D:\Study\Mentoring L2\Multithreading\Tasks\ThreadTasks\obj\Debug\ThreadTasks.csproj.CoreCompileInputs.cache
+D:\Study\Mentoring L2\Multithreading\Tasks\ThreadTasks\bin\Debug\ThreadTasks.dll
+D:\Study\Mentoring L2\Multithreading\Tasks\ThreadTasks\bin\Debug\ThreadTasks.pdb
+D:\Study\Mentoring L2\Multithreading\Tasks\ThreadTasks\obj\Debug\ThreadTasks.dll
+D:\Study\Mentoring L2\Multithreading\Tasks\ThreadTasks\obj\Debug\ThreadTasks.pdb

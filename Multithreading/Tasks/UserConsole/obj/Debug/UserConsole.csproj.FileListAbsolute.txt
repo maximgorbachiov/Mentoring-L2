@@ -1,0 +1,10 @@
+D:\Study\Mentoring L2\Multithreading\Tasks\UserConsole\obj\Debug\UserConsole.csprojAssemblyReference.cache
+D:\Study\Mentoring L2\Multithreading\Tasks\UserConsole\obj\Debug\UserConsole.csproj.CoreCompileInputs.cache
+D:\Study\Mentoring L2\Multithreading\Tasks\UserConsole\bin\Debug\UserConsole.exe.config
+D:\Study\Mentoring L2\Multithreading\Tasks\UserConsole\bin\Debug\UserConsole.exe
+D:\Study\Mentoring L2\Multithreading\Tasks\UserConsole\bin\Debug\UserConsole.pdb
+D:\Study\Mentoring L2\Multithreading\Tasks\UserConsole\bin\Debug\ThreadTasks.dll
+D:\Study\Mentoring L2\Multithreading\Tasks\UserConsole\bin\Debug\ThreadTasks.pdb
+D:\Study\Mentoring L2\Multithreading\Tasks\UserConsole\obj\Debug\UserConsole.csproj.CopyComplete
+D:\Study\Mentoring L2\Multithreading\Tasks\UserConsole\obj\Debug\UserConsole.exe
+D:\Study\Mentoring L2\Multithreading\Tasks\UserConsole\obj\Debug\UserConsole.pdb
