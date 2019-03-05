@@ -48,6 +48,7 @@
     <Compile Include="Task5\Task5.cs" />
     <Compile Include="Task6\ConcurrentCollection.cs" />
     <Compile Include="Task6\Task6.cs" />
+    <Compile Include="Task7\CustomTaskScheduler.cs" />
     <Compile Include="Task7\Task7.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
