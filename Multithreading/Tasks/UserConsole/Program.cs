@@ -55,7 +55,7 @@ namespace UserConsole
             Console.ReadKey();
             #endregion
 
-            Console.WriteLine();*/
+            Console.WriteLine();
 
             #region Sixth Task
             Console.WriteLine("Sixth Task");
@@ -63,7 +63,13 @@ namespace UserConsole
             Console.ReadKey();
             #endregion
 
-            Console.WriteLine();
+            Console.WriteLine();*/
+
+            #region Seventh Task
+            Console.WriteLine("Seventh Task");
+            Task7.RunScenarios();
+            Console.ReadKey();
+            #endregion
         }
     }
 }

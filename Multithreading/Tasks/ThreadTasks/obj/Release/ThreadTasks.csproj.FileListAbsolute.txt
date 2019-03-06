@@ -1,0 +1,5 @@
+D:\Maksim_Harbachou2\Study\Mentoring L2\Multithreading\Tasks\ThreadTasks\bin\Release\ThreadTasks.dll
+D:\Maksim_Harbachou2\Study\Mentoring L2\Multithreading\Tasks\ThreadTasks\bin\Release\ThreadTasks.pdb
+D:\Maksim_Harbachou2\Study\Mentoring L2\Multithreading\Tasks\ThreadTasks\obj\Release\ThreadTasks.csproj.CoreCompileInputs.cache
+D:\Maksim_Harbachou2\Study\Mentoring L2\Multithreading\Tasks\ThreadTasks\obj\Release\ThreadTasks.dll
+D:\Maksim_Harbachou2\Study\Mentoring L2\Multithreading\Tasks\ThreadTasks\obj\Release\ThreadTasks.pdb

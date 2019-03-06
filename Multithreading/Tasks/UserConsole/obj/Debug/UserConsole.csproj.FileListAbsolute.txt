@@ -8,3 +8,12 @@ D:\Study\Mentoring L2\Multithreading\Tasks\UserConsole\bin\Debug\ThreadTasks.pdb
 D:\Study\Mentoring L2\Multithreading\Tasks\UserConsole\obj\Debug\UserConsole.csproj.CopyComplete
 D:\Study\Mentoring L2\Multithreading\Tasks\UserConsole\obj\Debug\UserConsole.exe
 D:\Study\Mentoring L2\Multithreading\Tasks\UserConsole\obj\Debug\UserConsole.pdb
+D:\Maksim_Harbachou2\Study\Mentoring L2\Multithreading\Tasks\UserConsole\obj\Debug\UserConsole.csprojResolveAssemblyReference.cache
+D:\Maksim_Harbachou2\Study\Mentoring L2\Multithreading\Tasks\UserConsole\obj\Debug\UserConsole.csproj.CoreCompileInputs.cache
+D:\Maksim_Harbachou2\Study\Mentoring L2\Multithreading\Tasks\UserConsole\obj\Debug\UserConsole.exe
+D:\Maksim_Harbachou2\Study\Mentoring L2\Multithreading\Tasks\UserConsole\obj\Debug\UserConsole.pdb
+D:\Maksim_Harbachou2\Study\Mentoring L2\Multithreading\Tasks\UserConsole\bin\Debug\UserConsole.exe.config
+D:\Maksim_Harbachou2\Study\Mentoring L2\Multithreading\Tasks\UserConsole\bin\Debug\UserConsole.exe
+D:\Maksim_Harbachou2\Study\Mentoring L2\Multithreading\Tasks\UserConsole\bin\Debug\UserConsole.pdb
+D:\Maksim_Harbachou2\Study\Mentoring L2\Multithreading\Tasks\UserConsole\bin\Debug\ThreadTasks.dll
+D:\Maksim_Harbachou2\Study\Mentoring L2\Multithreading\Tasks\UserConsole\bin\Debug\ThreadTasks.pdb
