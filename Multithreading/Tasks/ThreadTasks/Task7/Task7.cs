@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -13,23 +14,36 @@ namespace ThreadTasks.Task7
 
         private static async void RunTasks()
         {
-            CancellationTokenSource cts = new CancellationTokenSource();
-            CancellationToken ct = cts.Token;
-            await RunTasks(1, ct);
-            await RunTasks(-1, ct);
-            RunTasks(1, ct);
-            cts.Cancel();
+            CancellationTokenSource cts1 = new CancellationTokenSource();
+            CancellationTokenSource cts2 = new CancellationTokenSource();
+            CancellationTokenSource cts3 = new CancellationTokenSource();
+            CancellationToken ct1 = cts1.Token;
+            CancellationToken ct2 = cts2.Token;
+            CancellationToken ct3 = cts3.Token;
+
+            List<Task> tasks = RunTasks(1, ct1);
+            Task.WaitAll(tasks.ToArray());
+            Console.ReadKey();
+
+            tasks = RunTasks(-1, ct2);
+            Task.WaitAll(tasks.ToArray());
+            Console.ReadKey();
+
+            tasks = RunTasks(1, ct3);
+            cts3.Cancel();
+            Task.WaitAll(tasks.ToArray());
         }
 
-        private static Task<TaskResults> RunTasks(int value, CancellationToken ct)
+        private static List<Task> RunTasks(int value, CancellationToken ct)
         {
-            Task<TaskResults> task = Task.Factory.StartNew(() => RunParentTask(value, ct), ct);
-            task.ContinueWith((parentTask) =>
+            List<Task> tasks = new List<Task>();
+            tasks.Add(Task.Factory.StartNew(() => RunParentTask(value, ct), ct));
+            tasks.Add(tasks[0].ContinueWith((parentTask) =>
             {
                 Console.WriteLine("This task executed regardless of the result of the parent task");
                 Console.WriteLine($"Runs on the thread: {Thread.CurrentThread.ManagedThreadId}");
-            });
-            task.ContinueWith((parentTask) =>
+            }));
+            tasks.Add(tasks[0].ContinueWith((parentTask) =>
             {
                 if (parentTask.IsFaulted)
                 {
@@ -42,20 +56,21 @@ namespace ThreadTasks.Task7
                     Console.WriteLine("This task was cancelled");
                     Console.WriteLine($"Runs on the thread: {Thread.CurrentThread.ManagedThreadId}");
                 }
-            }, TaskContinuationOptions.NotOnRanToCompletion);
-            task.ContinueWith((parentTask) =>
+            }, TaskContinuationOptions.NotOnRanToCompletion));
+            tasks.Add(tasks[0].ContinueWith((parentTask) =>
             {
                 Console.WriteLine("This task executed synchronously when parent task failed");
                 Console.WriteLine($"Error: {parentTask.Exception.Message}");
                 Console.WriteLine($"Runs on the thread: {Thread.CurrentThread.ManagedThreadId}");
-            }, TaskContinuationOptions.OnlyOnFaulted | TaskContinuationOptions.ExecuteSynchronously);
-            task.ContinueWith((parentTask) =>
+            }, TaskContinuationOptions.OnlyOnFaulted | TaskContinuationOptions.ExecuteSynchronously));
+            tasks.Add(tasks[0].ContinueWith((parentTask) =>
             {
                 Console.WriteLine("This task should execute not in a thread pool");
                 Console.WriteLine($"Runs on the thread: {Thread.CurrentThread.ManagedThreadId}");
-            }, ct, TaskContinuationOptions.OnlyOnCanceled, new CustomTaskScheduler());
+                Console.WriteLine($"Is threadpool thread: {Thread.CurrentThread.IsThreadPoolThread}");
+            }, ct, TaskContinuationOptions.OnlyOnCanceled, new CustomTaskScheduler()));
 
-            return task;
+            return tasks;
         }
 
         private static TaskResults RunParentTask(int value, CancellationToken cts)
