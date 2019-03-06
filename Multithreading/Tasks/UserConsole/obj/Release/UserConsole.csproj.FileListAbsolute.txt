@@ -1,9 +1,0 @@
-D:\Maksim_Harbachou2\Study\Mentoring L2\Multithreading\Tasks\UserConsole\bin\Release\UserConsole.exe.config
-D:\Maksim_Harbachou2\Study\Mentoring L2\Multithreading\Tasks\UserConsole\bin\Release\UserConsole.exe
-D:\Maksim_Harbachou2\Study\Mentoring L2\Multithreading\Tasks\UserConsole\bin\Release\UserConsole.pdb
-D:\Maksim_Harbachou2\Study\Mentoring L2\Multithreading\Tasks\UserConsole\bin\Release\ThreadTasks.dll
-D:\Maksim_Harbachou2\Study\Mentoring L2\Multithreading\Tasks\UserConsole\bin\Release\ThreadTasks.pdb
-D:\Maksim_Harbachou2\Study\Mentoring L2\Multithreading\Tasks\UserConsole\obj\Release\UserConsole.csprojResolveAssemblyReference.cache
-D:\Maksim_Harbachou2\Study\Mentoring L2\Multithreading\Tasks\UserConsole\obj\Release\UserConsole.csproj.CoreCompileInputs.cache
-D:\Maksim_Harbachou2\Study\Mentoring L2\Multithreading\Tasks\UserConsole\obj\Release\UserConsole.exe
-D:\Maksim_Harbachou2\Study\Mentoring L2\Multithreading\Tasks\UserConsole\obj\Release\UserConsole.pdb
