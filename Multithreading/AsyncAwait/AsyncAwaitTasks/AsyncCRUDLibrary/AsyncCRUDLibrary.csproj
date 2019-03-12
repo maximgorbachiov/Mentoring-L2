@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{472C3F46-8907-4AB7-B2AB-0C6C3688131D}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>UserUI</RootNamespace>
-    <AssemblyName>UserUI</AssemblyName>
+    <ProjectGuid>{C128C9C4-41A6-4F1B-AB49-F58ECDBA20E9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AsyncCRUDLibrary</RootNamespace>
+    <AssemblyName>AsyncCRUDLibrary</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,21 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="AsyncRepository.cs" />
+    <Compile Include="Interfaces\IAsyncRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AsyncCalculator\AsyncCalculator.csproj">
-      <Project>{fbdcc985-de06-4dce-a893-69837a41f5fb}</Project>
-      <Name>AsyncCalculator</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AsyncCRUDLibrary\AsyncCRUDLibrary.csproj">
-      <Project>{c128c9c4-41a6-4f1b-ab49-f58ecdba20e9}</Project>
-      <Name>AsyncCRUDLibrary</Name>
-    </ProjectReference>
+    <Compile Include="User.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

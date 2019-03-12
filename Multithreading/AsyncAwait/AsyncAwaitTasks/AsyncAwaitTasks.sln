@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task1", "Task1", "{F201F9DD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncCalculator", "AsyncCalculator\AsyncCalculator.csproj", "{FBDCC985-DE06-4DCE-A893-69837A41F5FB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task4", "Task4", "{A1DD78A0-6FC1-4987-A6B2-FB302109BEDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncCRUDLibrary", "AsyncCRUDLibrary\AsyncCRUDLibrary.csproj", "{C128C9C4-41A6-4F1B-AB49-F58ECDBA20E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,10 @@ Global
 		{FBDCC985-DE06-4DCE-A893-69837A41F5FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBDCC985-DE06-4DCE-A893-69837A41F5FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBDCC985-DE06-4DCE-A893-69837A41F5FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C128C9C4-41A6-4F1B-AB49-F58ECDBA20E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C128C9C4-41A6-4F1B-AB49-F58ECDBA20E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C128C9C4-41A6-4F1B-AB49-F58ECDBA20E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C128C9C4-41A6-4F1B-AB49-F58ECDBA20E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +40,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{F201F9DD-B9B7-4B6B-AD74-9EDCA3435A2E} = {0A0C72CC-A477-4F51-B936-F65E611FEF7E}
 		{FBDCC985-DE06-4DCE-A893-69837A41F5FB} = {F201F9DD-B9B7-4B6B-AD74-9EDCA3435A2E}
+		{A1DD78A0-6FC1-4987-A6B2-FB302109BEDA} = {0A0C72CC-A477-4F51-B936-F65E611FEF7E}
+		{C128C9C4-41A6-4F1B-AB49-F58ECDBA20E9} = {A1DD78A0-6FC1-4987-A6B2-FB302109BEDA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9B1F2BD9-CF0B-4B67-A186-8440B66ADBD1}
