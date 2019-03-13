@@ -9,7 +9,6 @@ namespace AsyncCRUDLibrary
     public class AsyncRepository : IAsyncRepository
     {
         private List<User> users = new List<User>();
-        private object lockObject = new object();
 
         public AsyncRepository()
         {
@@ -21,7 +20,7 @@ namespace AsyncCRUDLibrary
             string baseName = "Maksim";
             string baseSurname = "Harbachou";
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 100; i++)
             {
                 this.users.Add(new User
                 {
@@ -32,62 +31,45 @@ namespace AsyncCRUDLibrary
             }
         }
 
-        public async Task CreateUserAsync(User user, Action<bool> asyncCallback)
+        public async Task<bool> CreateUserAsync(User user)
         {
             if (user == null)
             {
                 throw new ArgumentNullException(nameof(user));
             }
-            if (asyncCallback == null)
-            {
-                throw new ArgumentNullException(nameof(asyncCallback));
-            }
 
-            await Task.Factory.StartNew(() =>
+            return await Task.Factory.StartNew(() =>
             {
                 bool result = false;
 
-                lock (lockObject)
-                {
-                    Predicate<User> selector = (u) => u.Name == user.Name && u.Surname == user.Surname && u.Age == user.Age;
-                    User existedUser = this.users.FirstOrDefault((u) => selector(u));
+                Predicate<User> selector = (u) => u.Name == user.Name && u.Surname == user.Surname && u.Age == user.Age;
+                User existedUser = this.users.FirstOrDefault((u) => selector(u));
 
-                    if (existedUser == null)
-                    {
-                        this.users.Add(user.Clone() as User);
-                        result = true;
-                    }
+                if (existedUser == null)
+                {
+                    this.users.Add(user.Clone() as User);
+                    result = true;
                 }
                 return result;
-            }).ContinueWith(creationTask => asyncCallback(creationTask.Result));
+            });
         }
 
-        public async Task ReadUserBySelectorAsync(Predicate<User> selector, Action<List<User>> asyncCallback)
+        public async Task<IEnumerable<User>> ReadUserBySelectorAsync(Predicate<User> selector)
         {
             if (selector == null)
             {
                 throw new ArgumentNullException(nameof(selector));
             }
-            if (asyncCallback == null)
-            {
-                throw new ArgumentNullException(nameof(asyncCallback));
-            }
 
-            await Task.Factory.StartNew(() =>
+            return await Task.Factory.StartNew(() =>
             {
-                List<User> readedUsers = new List<User>();
-
-                lock (lockObject)
-                {
-                    readedUsers.AddRange(this.users
-                        .Where(user => selector(user))
-                        .Select(user => user.Clone() as User));
-                }
-                return readedUsers;
-            }).ContinueWith(readTask => asyncCallback(readTask.Result));
+                return this.users
+                    .Where(user => selector(user))
+                    .Select(user => user.Clone() as User);
+            });
         }
 
-        public async Task UpdateUserAsync(Predicate<User> selector, User updatedUser, Action<bool> asyncCallback)
+        public async Task<bool> UpdateUserAsync(Predicate<User> selector, User updatedUser)
         {
             if (selector == null)
             {
@@ -97,56 +79,43 @@ namespace AsyncCRUDLibrary
             {
                 throw new ArgumentNullException(nameof(updatedUser));
             }
-            if (asyncCallback == null)
-            {
-                throw new ArgumentNullException(nameof(asyncCallback));
-            }
 
-            await Task.Factory.StartNew(() =>
+            return await Task.Factory.StartNew(() =>
             {
                 bool result = false;
 
-                lock (lockObject)
+                User userToUpdated = this.users.FirstOrDefault(user => selector(user));
+                if (userToUpdated != null)
                 {
-                    User userToUpdated = this.users.FirstOrDefault(user => selector(user));
-
-                    if (userToUpdated != null)
-                    {
-                        userToUpdated = updatedUser.Clone() as User;
-                        result = true;
-                    }
+                    User updatedUserClone = updatedUser.Clone() as User;
+                    userToUpdated.Name = updatedUser.Name;
+                    userToUpdated.Surname = updatedUser.Surname;
+                    userToUpdated.Age = updatedUser.Age;
+                    result = true;
                 }
                 return result;
-            }).ContinueWith(updateTask => asyncCallback(updateTask.Result));
+            });
         }
 
-        public async Task DeleteUserAsync(Predicate<User> selector, Action<bool> asyncCallback)
+        public async Task<bool> DeleteUserAsync(Predicate<User> selector)
         {
             if (selector == null)
             {
                 throw new ArgumentNullException(nameof(selector));
             }
-            if (asyncCallback == null)
-            {
-                throw new ArgumentNullException(nameof(asyncCallback));
-            }
 
-            await Task.Factory.StartNew(() =>
+            return await Task.Factory.StartNew(() =>
             {
                 bool result = false;
 
-                lock (lockObject)
+                User userToDelete = this.users.FirstOrDefault(user => selector(user));
+                if (userToDelete != null)
                 {
-                    User userToDelete = this.users.FirstOrDefault(user => selector(user));
-
-                    if (userToDelete != null)
-                    {
-                        this.users.Remove(userToDelete);
-                        result = true;
-                    }
+                    this.users.Remove(userToDelete);
+                    result = true;
                 }
                 return result;
-            }).ContinueWith(updateTask => asyncCallback(updateTask.Result));
+            });
         }
     }
 }

@@ -12,5 +12,10 @@ namespace AsyncCRUDLibrary
         {
             return this.MemberwiseClone();
         }
+
+        public override string ToString()
+        {
+            return $"{Name} {Surname} {Age}";
+        }
     }
 }

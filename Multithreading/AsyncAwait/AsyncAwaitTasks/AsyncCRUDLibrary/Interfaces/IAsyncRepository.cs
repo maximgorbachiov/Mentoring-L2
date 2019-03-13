@@ -6,9 +6,9 @@ namespace AsyncCRUDLibrary.Interfaces
 {
     public interface IAsyncRepository
     {
-        Task CreateUserAsync(User user, Action<bool> asyncCallback);
-        Task ReadUserBySelectorAsync(Predicate<User> selector, Action<List<User>> asyncCallback);
-        Task UpdateUserAsync(Predicate<User> selector, User updatedUser, Action<bool> asyncCallback);
-        Task DeleteUserAsync(Predicate<User> selector, Action<bool> asyncCallback);
+        Task<bool> CreateUserAsync(User user);
+        Task<IEnumerable<User>> ReadUserBySelectorAsync(Predicate<User> selector);
+        Task<bool> UpdateUserAsync(Predicate<User> selector, User updatedUser);
+        Task<bool> DeleteUserAsync(Predicate<User> selector);
     }
 }
