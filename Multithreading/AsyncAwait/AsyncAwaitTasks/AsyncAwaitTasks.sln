@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncCRUDLibrary", "AsyncCR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserFormsUI", "UserFormsUI\UserFormsUI.csproj", "{0FF79CED-9290-491A-9A0F-FDAAFE9A6410}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserFormsUIForTask3", "UserFormsUIForTask3\UserFormsUIForTask3.csproj", "{61B329A1-32D3-48CF-B384-9B84124A375A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{0FF79CED-9290-491A-9A0F-FDAAFE9A6410}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FF79CED-9290-491A-9A0F-FDAAFE9A6410}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FF79CED-9290-491A-9A0F-FDAAFE9A6410}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61B329A1-32D3-48CF-B384-9B84124A375A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61B329A1-32D3-48CF-B384-9B84124A375A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61B329A1-32D3-48CF-B384-9B84124A375A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61B329A1-32D3-48CF-B384-9B84124A375A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
