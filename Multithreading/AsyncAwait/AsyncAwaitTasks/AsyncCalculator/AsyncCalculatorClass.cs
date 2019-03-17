@@ -49,13 +49,19 @@ namespace AsyncCalculator
                 {
                     if (ct.IsCancellationRequested)
                     {
-                        return;
+                        return 0;
                     }
-                    Thread.Sleep(1);
+                    Task.Delay(1);
                     temp += i;
                 }
-                Console.WriteLine($"Sum of all elements from 0 to {userNumber} = {temp}");
-            }, ct);
+                return temp;
+            }, ct).ContinueWith((calcTask) => 
+            {
+                if (calcTask.Result != 0)
+                {
+                    Console.WriteLine($"Sum of all elements from 0 to {userNumber} = {calcTask.Result}");
+                }
+            });
         }
     }
 }
