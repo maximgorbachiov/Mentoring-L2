@@ -10,9 +10,9 @@ namespace InterpolationToConcatinationLibrary
 {
     public class InterpolationTransformVisitor : ExpressionVisitor
     {
-        private string interpolationBraceTemplate = @"\w*\s*\{\s*\w+\s*\}";
-        private MethodInfo concatMethod = typeof(string).GetMethod("Concat", new[] { typeof(string), typeof(string) });
-        private MethodInfo toString = typeof(object).GetMethod("ToString");
+        private static string interpolationBraceTemplate = @"\w*\s*\{\s*\w+\s*\}";
+        private static MethodInfo concatMethod = typeof(string).GetMethod("Concat", new[] { typeof(string), typeof(string) });
+        private static MethodInfo toString = typeof(object).GetMethod("ToString");
 
         protected override Expression VisitMethodCall(MethodCallExpression node)
         {
