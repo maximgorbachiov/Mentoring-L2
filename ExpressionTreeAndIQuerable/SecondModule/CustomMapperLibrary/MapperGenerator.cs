@@ -30,6 +30,32 @@ namespace CustomMapperLibrary
         /// <param name="sourceRule"></param>
         /// <param name="destinationRule"></param>
         /// <returns></returns>
+        public MapperGenerator<TSource, TDestination> CreateRule(string sourcePropertyName, string destinationPropertyName)
+        {
+            var sourceMember = typeof(TSource).GetMembers()
+                .FirstOrDefault(m => m.Name == sourcePropertyName && (m.MemberType == MemberTypes.Field || m.MemberType == MemberTypes.Property));
+            var destinationMember = typeof(TDestination).GetMembers()
+                .FirstOrDefault(m => m.Name == destinationPropertyName && (m.MemberType == MemberTypes.Field || m.MemberType == MemberTypes.Property));
+
+            if (sourceMember != null && destinationMember != null)
+            {
+                this.additionalRules.Add(new Rule
+                {
+                    SourcePropertyName = sourceMember.Name,
+                    DestinationPropertyName = destinationMember.Name
+                });
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Create rule of mapping source model to destination model
+        /// </summary>
+        /// <typeparam name="TMember"></typeparam>
+        /// <param name="sourceRule"></param>
+        /// <param name="destinationRule"></param>
+        /// <returns></returns>
         public MapperGenerator<TSource, TDestination> CreateRule<TMember>(Expression<Func<TSource, TMember>> sourceRule, Expression<Func<TDestination, TMember>> destinationRule)
         {
             var sourceMemberExpression = sourceRule.Body as MemberExpression;

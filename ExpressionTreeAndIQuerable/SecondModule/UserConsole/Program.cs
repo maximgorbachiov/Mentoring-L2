@@ -50,9 +50,9 @@ namespace UserConsole
             var newMapper = MapperGenerator<UserA, UserAViewModel>.CreateMapperGenerator()
                 .CreateRule(sourceUser => sourceUser.Name, destUser => destUser.ViewModelName)
                 .CreateRule(sourceUser => sourceUser.Surname, destUser => destUser.ViewModelSurname)
-                .CreateRule(sourceUser => sourceUser.Age, destUser => destUser.ViewModelAge)
+                .CreateRule("Age", "ViewModelAge")
                 .CreateRule(sourceUser => sourceUser.Adress, destUser => destUser.ViewModelAdress)
-                .CreateRule(sourceUser => sourceUser.CardNumber, destUser => destUser.ViewModelCardNumber)
+                .CreateRule("CardNumber", "ViewModelCardNumber")
                 .CreateRule(sourceUser => sourceUser.FullAdress, destUser => destUser.ViewModelFullAdress)
                 .GenerateMapper();
             var aViewModel = newMapper.Map(a);
