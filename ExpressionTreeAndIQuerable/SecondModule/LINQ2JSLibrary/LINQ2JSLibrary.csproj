@@ -41,17 +41,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ITranslator.cs" />
-    <Compile Include="IValidatationProvider.cs" />
-    <Compile Include="IValidationResult.cs" />
-    <Compile Include="JSTranslator.cs" />
-    <Compile Include="JSValidationProvider.cs" />
-    <Compile Include="ActionTranslator.cs" />
-    <Compile Include="Translator.cs" />
-    <Compile Include="ValidatedModel.cs" />
-    <Compile Include="IValidated.cs" />
+    <Compile Include="Implementations\ActionValidationsTranslator.cs" />
+    <Compile Include="Interfaces\ITranslator.cs" />
+    <Compile Include="Implementations\JSValidationsTranslator.cs" />
+    <Compile Include="Implementations\Translator.cs" />
+    <Compile Include="Implementations\ValidationsStorage.cs" />
+    <Compile Include="OldInterfaces\ITranslator.cs" />
+    <Compile Include="OldInterfaces\IValidatationProvider.cs" />
+    <Compile Include="OldInterfaces\IValidationResult.cs" />
+    <Compile Include="Interfaces\IValidationsStorage.cs" />
+    <Compile Include="OldImplementations\JSTranslator.cs" />
+    <Compile Include="OldImplementations\JSValidationProvider.cs" />
+    <Compile Include="OldImplementations\ActionTranslator.cs" />
+    <Compile Include="OldImplementations\Translator.cs" />
+    <Compile Include="OldImplementations\ValidatedModel.cs" />
+    <Compile Include="OldInterfaces\IValidated.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ValidationProvider.cs" />
+    <Compile Include="OldImplementations\ValidationProvider.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
