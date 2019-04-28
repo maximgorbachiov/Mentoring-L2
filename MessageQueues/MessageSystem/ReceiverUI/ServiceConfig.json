@@ -1,0 +1,8 @@
+{
+  "ServiceSegment": {
+    "ReplyQueue": ".\\Private$\\HandlerReplyQueue-{#ID}",
+    "ServiceRole": "handler",
+    "ServiceId": "1",
+    "WorkTime": "1000"
+  }
+}
