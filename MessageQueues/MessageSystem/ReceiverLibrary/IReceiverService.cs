@@ -1,9 +1,9 @@
-﻿namespace ReceiverLibrary
+﻿using ServiceLibrary;
+
+namespace ReceiverLibrary
 {
-    public interface IReceiverService
+    public interface IReceiverService : IMessageSystemUnit
     {
-        bool CreateConnectionWithMonitor();
         void StartMessagingWithClients(object data);
-        void StartMessagingWithMonitor(object data);
     }
 }

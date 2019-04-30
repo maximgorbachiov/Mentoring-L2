@@ -4,8 +4,7 @@ namespace ModelsDescriptionLibrary.Interfaces
 {
     public interface ICommand
     {
-        CommandType CommandType { get; }
-        int ServiceId { get; }
-        object Data { get; }
+        CommandType CommandType { get; set; }
+        object Data { get; set; }
     }
 }

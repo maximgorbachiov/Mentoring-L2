@@ -63,6 +63,10 @@
       <Project>{ac3da3fc-258c-46a2-b8f8-db37851126c7}</Project>
       <Name>ReceiverLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ServiceLibrary\ServiceLibrary.csproj">
+      <Project>{102357E3-D40E-4248-85BE-617A7CEC286A}</Project>
+      <Name>ServiceLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

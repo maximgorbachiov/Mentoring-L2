@@ -1,6 +1,6 @@
 ﻿namespace ModelsDescriptionLibrary.Models.Enums
 {
-    public enum InitStatus
+    public enum Status
     {
         OK,
         Error

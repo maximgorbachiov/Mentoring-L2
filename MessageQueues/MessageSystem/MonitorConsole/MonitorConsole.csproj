@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8A09BF8A-EA8D-411C-8ACA-43A1DC59C4C0}</ProjectGuid>
+    <ProjectGuid>{454E156F-9CAF-4C16-9A55-AED06FCED34F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ClientBot</RootNamespace>
-    <AssemblyName>ClientBot</AssemblyName>
+    <RootNamespace>MonitorConsole</RootNamespace>
+    <AssemblyName>MonitorConsole</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,24 +48,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ServiceConfig.json" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClientLibrary\ClientLibrary.csproj">
-      <Project>{450ceb1f-30e0-488c-b0ad-ffdb6baf5a16}</Project>
-      <Name>ClientLibrary</Name>
+    <ProjectReference Include="..\LoggerService\LoggerService.csproj">
+      <Project>{9214B8B7-9269-4D8A-BC88-00291CE4F230}</Project>
+      <Name>LoggerService</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ConfigurationReader\ConfigurationReader.csproj">
-      <Project>{4a04a916-0d99-444d-97d9-92c7cffa3c2b}</Project>
-      <Name>ConfigurationReader</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ModelsDescriptionLibrary\ModelsDescriptionLibrary.csproj">
-      <Project>{0f8ad4c2-0f33-4b29-ad67-0938b79484a5}</Project>
-      <Name>ModelsDescriptionLibrary</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ServiceLibrary\ServiceLibrary.csproj">
-      <Project>{102357E3-D40E-4248-85BE-617A7CEC286A}</Project>
-      <Name>ServiceLibrary</Name>
+    <ProjectReference Include="..\MonitorLibrary\MonitorLibrary.csproj">
+      <Project>{35DA99FA-0A11-4562-9246-76A47AB33A8E}</Project>
+      <Name>MonitorLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

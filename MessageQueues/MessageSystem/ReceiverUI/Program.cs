@@ -15,12 +15,12 @@ namespace ReceiverUI
         {
             IConfigurationService configurationService = new JsonConfigurationService();
             IConfiguration configuration = configurationService.GetConfiguration(ConfigPath);
-            IReceiverService clientService = new ReceiverService(configuration);
+            IReceiverService receiverService = new ReceiverService(configuration);
 
-            if (clientService.CreateConnectionWithMonitor())
+            if (receiverService.CreateConnectionWithMonitor())
             {
-                ThreadPool.QueueUserWorkItem(clientService.StartMessagingWithClients);
-                ThreadPool.QueueUserWorkItem(clientService.StartMessagingWithMonitor);
+                ThreadPool.QueueUserWorkItem(receiverService.StartMessagingWithClients);
+                ThreadPool.QueueUserWorkItem(receiverService.StartMessagingWithMonitor);
                 Console.ReadLine();
             }
             else

@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8A09BF8A-EA8D-411C-8ACA-43A1DC59C4C0}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>ClientBot</RootNamespace>
-    <AssemblyName>ClientBot</AssemblyName>
+    <ProjectGuid>{102357E3-D40E-4248-85BE-617A7CEC286A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ServiceLibrary</RootNamespace>
+    <AssemblyName>ServiceLibrary</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -35,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,29 +42,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="IMessageSystemUnit.cs" />
+    <Compile Include="MessageSystemUnit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="ServiceConfig.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ClientLibrary\ClientLibrary.csproj">
-      <Project>{450ceb1f-30e0-488c-b0ad-ffdb6baf5a16}</Project>
-      <Name>ClientLibrary</Name>
+    <ProjectReference Include="..\LoggerService\LoggerService.csproj">
+      <Project>{9214B8B7-9269-4D8A-BC88-00291CE4F230}</Project>
+      <Name>LoggerService</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ConfigurationReader\ConfigurationReader.csproj">
-      <Project>{4a04a916-0d99-444d-97d9-92c7cffa3c2b}</Project>
-      <Name>ConfigurationReader</Name>
+    <ProjectReference Include="..\MessageQueueLibrary\MessageQueueLibrary.csproj">
+      <Project>{554DAD70-26E8-4E26-A441-C7F7E4BE1837}</Project>
+      <Name>MessageQueueLibrary</Name>
     </ProjectReference>
     <ProjectReference Include="..\ModelsDescriptionLibrary\ModelsDescriptionLibrary.csproj">
-      <Project>{0f8ad4c2-0f33-4b29-ad67-0938b79484a5}</Project>
+      <Project>{0F8AD4C2-0F33-4B29-AD67-0938B79484A5}</Project>
       <Name>ModelsDescriptionLibrary</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ServiceLibrary\ServiceLibrary.csproj">
-      <Project>{102357E3-D40E-4248-85BE-617A7CEC286A}</Project>
-      <Name>ServiceLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

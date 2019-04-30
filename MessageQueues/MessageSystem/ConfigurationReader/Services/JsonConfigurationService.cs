@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using ConfigurationReader.Interfaces.Services;
 using ModelsDescriptionLibrary.Interfaces;
+using ModelsDescriptionLibrary.Models;
 using Newtonsoft.Json;
 
 namespace ConfigurationReader.Services
@@ -14,7 +15,10 @@ namespace ConfigurationReader.Services
             using(StreamReader stream = new StreamReader(configPath))
             {
                 string jsonSettings = stream.ReadToEnd();
-                configuration = JsonConvert.DeserializeObject<IConfiguration>(jsonSettings);
+                configuration = JsonConvert.DeserializeObject<Configuration>(jsonSettings, new JsonSerializerSettings
+                {
+                    ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor
+                });
             }
 
             return configuration;

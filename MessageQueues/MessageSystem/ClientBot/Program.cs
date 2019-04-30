@@ -19,7 +19,7 @@ namespace ClientBot
 
             if (clientService.CreateConnectionWithMonitor())
             {
-                ThreadPool.QueueUserWorkItem(clientService.StartMessagingWithHandler);
+                ThreadPool.QueueUserWorkItem(clientService.StartMessagingWithReceiver);
                 ThreadPool.QueueUserWorkItem(clientService.StartMessagingWithMonitor);
                 Console.ReadLine();
             }

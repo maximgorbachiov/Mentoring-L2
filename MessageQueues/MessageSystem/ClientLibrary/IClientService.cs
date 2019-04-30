@@ -1,11 +1,9 @@
-﻿using ModelsDescriptionLibrary.Models;
+﻿using ServiceLibrary;
 
 namespace ClientLibrary
 {
-    public interface IClientService
+    public interface IClientService : IMessageSystemUnit
     {
-        bool CreateConnectionWithMonitor();
-        void StartMessagingWithHandler(object data);
-        void StartMessagingWithMonitor(object data);
+        void StartMessagingWithReceiver(object data);
     }
 }

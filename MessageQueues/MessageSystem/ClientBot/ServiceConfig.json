@@ -1,8 +1,6 @@
 {
-  "ServiceSegment": {
-    "ReplyQueue": ".\\Private$\\ReplyQueue-{#ID}",
-    "ServiceRole": "client",
-    "ServiceId": "1",
-    "WorkTime": "3000"
-  }
+  "ReplyQueue": ".\\Private$\\ReplyQueue-{#ID}",
+  "ServiceRole": "Client",
+  "ServiceId": "1",
+  "WorkTime": "3000"
 }

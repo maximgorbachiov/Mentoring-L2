@@ -42,10 +42,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IMonitorService.cs" />
     <Compile Include="MonitorService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceInstance.cs" />
+    <Compile Include="StoredCommand.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LoggerService\LoggerService.csproj">
+      <Project>{9214b8b7-9269-4d8a-bc88-00291ce4f230}</Project>
+      <Name>LoggerService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MessageQueueLibrary\MessageQueueLibrary.csproj">
+      <Project>{554DAD70-26E8-4E26-A441-C7F7E4BE1837}</Project>
+      <Name>MessageQueueLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ModelsDescriptionLibrary\ModelsDescriptionLibrary.csproj">
       <Project>{0f8ad4c2-0f33-4b29-ad67-0938b79484a5}</Project>
       <Name>ModelsDescriptionLibrary</Name>
