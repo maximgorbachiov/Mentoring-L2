@@ -3,6 +3,7 @@ using ModelsDescriptionLibrary.Models.Enums;
 
 namespace ModelsDescriptionLibrary.Models
 {
+    [Serializable]
     public class InitReplyMessage
     {
         public DateTime MonitorReplyTime { get; set; }

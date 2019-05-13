@@ -2,6 +2,7 @@
 
 namespace ModelsDescriptionLibrary.Models
 {
+    [Serializable]
     public class Data
     {
         public string ServiceId { get; set; }

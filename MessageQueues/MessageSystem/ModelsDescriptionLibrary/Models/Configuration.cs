@@ -1,8 +1,10 @@
 ﻿using ModelsDescriptionLibrary.Interfaces;
 using ModelsDescriptionLibrary.Models.Enums;
+using System;
 
 namespace ModelsDescriptionLibrary.Models
 {
+    [Serializable]
     public class Configuration : IConfiguration
     {
         public ServiceRole ServiceRole { get; }

@@ -17,6 +17,7 @@ namespace ClientLibrary
         public ClientService(IConfiguration configuration) : base(configuration)
         {
             this.receiverQueue = this.messageQueueFactory.GetMessageQueue(ReceiverQueueName);
+            this.receiverQueue.Formatter = new BinaryMessageFormatter();
         }
 
         public void StartMessagingWithReceiver(object data)

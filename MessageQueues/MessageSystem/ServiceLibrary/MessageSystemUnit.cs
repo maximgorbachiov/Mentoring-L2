@@ -36,8 +36,10 @@ namespace ServiceLibrary
             this.configuration = configuration;
             this.workTime = configuration.WorkTime;
             this.replyQueue = this.messageQueueFactory.GetMessageQueue(configuration.ReplyQueue);
-            this.replyQueue.Formatter = new XmlMessageFormatter(new Type[] { typeof(UnifiedMessage), typeof(ServiceInitMessage) });
+            //this.replyQueue.Formatter = new XmlMessageFormatter(new Type[] { typeof(UnifiedMessage), typeof(ServiceInitMessage) });
+            this.replyQueue.Formatter = new BinaryMessageFormatter();
             this.controlQueue = this.messageQueueFactory.GetMessageQueue(ControlQueueName);
+            this.controlQueue.Formatter = new BinaryMessageFormatter();
         }
 
         public bool CreateConnectionWithMonitor()
@@ -133,8 +135,9 @@ namespace ServiceLibrary
                 Data = initMessage
             };
             Message message = new Message(unifiedMessage);
+            message.Formatter = new BinaryMessageFormatter();
             message.ResponseQueue = this.replyQueue;
-            this.controlQueue.Send(unifiedMessage);
+            this.controlQueue.Send(message);
         }
     }
 }

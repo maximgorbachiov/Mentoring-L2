@@ -26,6 +26,9 @@ namespace MonitorLibrary
         public MonitorService()
         {
             this.controlQueue = messageQueueFactory.GetMessageQueue(ControlQueueName);
+            this.controlQueue.Formatter = new BinaryMessageFormatter();
+            this.ClientServices = new List<ServiceInstance>();
+            this.ReceiverServices = new List<ServiceInstance>();
         }
 
         public void Listen(object data)
@@ -124,7 +127,7 @@ namespace MonitorLibrary
                     Configuration = initMessage.ServiceConfiguration,
                     MessageQueue = responseQueue
                 };
-
+                serviceInstance.MessageQueue.Formatter = new BinaryMessageFormatter();
                 var servicesGroup = serviceInstance.Configuration.ServiceRole == ServiceRole.Client
                     ? this.ClientServices
                     : this.ReceiverServices;

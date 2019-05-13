@@ -16,7 +16,8 @@ namespace ReceiverLibrary
         public ReceiverService(IConfiguration configuration) : base(configuration)
         {
             this.receiverQueue = this.messageQueueFactory.GetMessageQueue(ReceiverQueueName);
-            this.receiverQueue.Formatter = new XmlMessageFormatter(new Type[] { typeof(UnifiedMessage) });
+            //this.receiverQueue.Formatter = new XmlMessageFormatter(new Type[] { typeof(UnifiedMessage) });
+            this.receiverQueue.Formatter = new BinaryMessageFormatter();
         }
 
         public void StartMessagingWithClients(object data)
